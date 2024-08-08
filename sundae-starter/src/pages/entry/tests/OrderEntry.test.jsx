@@ -1,12 +1,7 @@
-import {
-  logRoles,
-  render,
-  screen,
-} from '../../../test-utils/testing-library-utils';
+import { render, screen } from '../../../test-utils/testing-library-utils';
 import { server } from '../../../mocks/server';
 import { http, HttpResponse } from 'msw';
 import OrderEntry from '../OrderEntry';
-import { OrderDetailsProvider } from '../../../context/OrderDetails';
 
 test.only('handles error for scoops and toppings routes', async () => {
   server.resetHandlers(
