@@ -56,8 +56,8 @@ test('Order Phases', async () => {
   expect(loading).toBeInTheDocument();
 
   //Confirm order number on confirimation page
-  const confirmationHeader = await screen.findByRole('heading', {
-    name: /thank/i,
+  const confirmationHeader = await screen.findByText('Thank You', {
+    exact: false,
   });
   // expect(loading).not.toBeInTheDocument();
   expect(confirmationHeader).toBeInTheDocument();
