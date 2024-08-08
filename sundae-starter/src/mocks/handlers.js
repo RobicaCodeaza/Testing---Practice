@@ -11,4 +11,17 @@ export const handlers = [
       },
     ]);
   }),
+
+  http.get('http://localhost:3030/toppings', () => {
+    return HttpResponse.json([
+      {
+        name: 'M&Ms',
+        imagePath: '/images/m-and-ms.png',
+      },
+      {
+        name: 'Hot fudge',
+        imagePath: '/images/hot-fudge.png',
+      },
+    ]);
+  }),
 ];
