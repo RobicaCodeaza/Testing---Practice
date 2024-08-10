@@ -9,16 +9,9 @@ import OrderEntry from '../OrderEntry';
 import userEvent from '@testing-library/user-event';
 
 test('handles error for scoops and toppings routes', async () => {
-  server.use(
-    http.get('http://localhost:3030/scoops'),
-    () => {
-      return new HttpResponse(null, { status: 500 });
-    },
-    http.get('http://localhost:3030/toppings'),
-    () => {
-      return new HttpResponse(null, { status: 500 });
-    }
-  );
+  server.use(http.post('http://localhost:3030/order'), () => {
+    return new HttpResponse(null, { status: 500 });
+  });
 
   const { container } = render(<OrderEntry></OrderEntry>);
   const alerts = await screen.findAllByRole('alert');
