@@ -27,6 +27,6 @@ export const handlers = [
 
   http.post('http://localhost:3030/order', async () => {
     await delay(400);
-    return HttpResponse.json(null, { status: 201 });
+    return HttpResponse.json({ orderNumber: 12345678 }, { status: 201 });
   }),
 ];
